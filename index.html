@@ -220,10 +220,12 @@
   }
   </script>
   <link rel="stylesheet" href="./src/styles/footer-merlie.css?v=2">
-<link rel="stylesheet" href="./src/styles/products-logo.css?v=1">
+<link rel="stylesheet" href="./src/styles/products-logo.css?v=mobile-two-cards-2">
 <link rel="stylesheet" href="./src/styles/trio-logo.css?v=2">
-<link rel="stylesheet" href="./src/styles/home-section-alignment.css?v=2">
-  <link rel="stylesheet" href="./src/styles/menu-drawer.css?v=lux5">
+<link rel="stylesheet" href="./src/styles/home-section-alignment.css?v=5">
+<link rel="stylesheet" href="./src/styles/club-editorial.css?v=2">
+<link rel="stylesheet" href="./src/styles/home-carousel-radius.css?v=2">
+<link rel="stylesheet" href="./src/styles/menu-drawer.css?v=refined-13">
 </head>
 <body>
 
@@ -233,145 +235,74 @@
   <div class="mobile-nav-backdrop" id="mobile-nav-backdrop" onclick="if(event.target === this) window.miamApp.closeMobileMenu()">
     <div class="mobile-nav-drawer" role="dialog" aria-modal="true" aria-label="Menu de navigation mobile">
       
-      <!-- En-tête : [✕] Titre centré [🔍] [🛍️] -->
+      <!-- Signature de marque et fermeture du menu -->
       <div class="mobile-nav-header">
-        <button type="button" class="mobile-nav-close-btn" id="mobile-nav-close-btn" onclick="window.miamApp.closeMobileMenu()" aria-label="Fermer le menu" title="Fermer">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <line x1="18" y1="6" x2="6" y2="18"></line>
-            <line x1="6" y1="6" x2="18" y2="18"></line>
-          </svg>
+        <a class="mobile-menu-brand" href="#" onclick="event.preventDefault(); window.miamApp.navigate('home')">
+          <img src="./images/logo.png" alt="Le Secret de Merlie — Accueil" width="96" height="64">
+        </a>
+        <button type="button" class="mobile-nav-close-btn" id="mobile-nav-close-btn" onclick="window.miamApp.closeMobileMenu()" aria-label="Fermer le menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg>
         </button>
-
-        <div class="mobile-nav-title">Le Secret de Merlie</div>
-
-        <div class="mobile-nav-header-actions">
-          <button type="button" class="mobile-nav-action-btn" onclick="window.miamApp.focusSearch()" aria-label="Rechercher un produit" title="Rechercher">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <circle cx="11" cy="11" r="8"></circle>
-              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-            </svg>
-          </button>
-          <button type="button" class="mobile-nav-action-btn" onclick="window.miamApp.closeMobileMenu(); window.miamApp.openCart();" aria-label="Mon panier" title="Panier">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path>
-              <line x1="3" y1="6" x2="21" y2="6"></line>
-              <path d="M16 10a4 4 0 0 1-8 0"></path>
-            </svg>
-            <span class="cart-count-badge" id="mobile-drawer-cart-count">0</span>
-          </button>
-        </div>
       </div>
 
       <!-- Liens de navigation avec typographie épurée + icônes et couleurs conservées -->
       <nav class="mobile-nav-links" aria-label="Navigation principale">
-        
-        <!-- ACCUEIL -->
-        <a href="#" class="mobile-nav-item" onclick="event.preventDefault(); window.miamApp.navigate('home')">
-          <span class="mobile-nav-left">
-            <span class="mobile-nav-icon-box theme-green">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 10 9-7 9 7v10H3z"/><path d="M9 20v-7h6v7"/></svg>
-            </span>
-            <span class="mobile-nav-text">Accueil</span>
-          </span>
-          <span class="mobile-nav-chevron">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="9 18 15 12 9 6"></polyline></svg>
-          </span>
-        </a>
-
-        <!-- NOS ÉPIS & BOUTIQUE (Menu Déroulant) -->
         <div class="mobile-nav-dropdown-wrapper" id="shop-menu-dropdown-wrap">
-          <div class="mobile-nav-item mobile-nav-dropdown-toggle" id="shop-menu-dropdown-btn" onclick="window.miamApp.toggleShopDropdown(event)" role="button" aria-expanded="false" aria-haspopup="true" tabindex="0">
+          <button type="button" class="mobile-nav-item mobile-nav-dropdown-toggle" id="shop-menu-dropdown-btn" onclick="window.miamApp.toggleShopDropdown(event)" aria-expanded="false" aria-controls="shop-menu-dropdown-list">
             <span class="mobile-nav-left">
               <span class="mobile-nav-icon-box theme-red">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 7h14l1 14H4z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
               </span>
-              <span class="mobile-nav-text">Nos Épis &amp; Spécialités</span>
+              <span class="mobile-nav-text">Nos Produits</span>
             </span>
             <span class="mobile-nav-chevron">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="9 18 15 12 9 6"></polyline></svg>
             </span>
-          </div>
+          </button>
 
           <!-- Contenu déroulant accordéon -->
           <div class="mobile-nav-dropdown-content" id="shop-menu-dropdown-list">
-            <div class="mobile-nav-subitem" onclick="window.miamApp.selectCollection('all')">
-              <span class="mobile-nav-subitem-left">
-                <span class="mobile-nav-subitem-icon">⊞</span>
-                <span>Toutes nos spécialités</span>
-              </span>
+            <a href="#" class="mobile-nav-subitem" onclick="window.miamApp.closeMobileMenu(); event.preventDefault(); window.miamApp.viewProduct('pack-decouverte-epis');">
+              <span class="mobile-nav-subitem-left"><span class="mobile-nav-subitem-icon">🎁</span><span>Trio Découverte Épis</span></span>
               <span class="mobile-nav-subitem-arrow">›</span>
-            </div>
-            <div class="mobile-nav-subitem" onclick="window.miamApp.selectCollection('epis')">
-              <span class="mobile-nav-subitem-left">
-                <span class="mobile-nav-subitem-icon">🌿</span>
-                <span>L'Épis Authentique (Le Classique)</span>
-              </span>
+            </a>
+            <a href="#" class="mobile-nav-subitem" onclick="window.miamApp.closeMobileMenu(); event.preventDefault(); window.miamApp.viewProduct('epis-authentique');">
+              <span class="mobile-nav-subitem-left"><span class="mobile-nav-subitem-icon">🌿</span><span>L'Épis Authentique</span></span>
               <span class="mobile-nav-subitem-arrow">›</span>
-            </div>
-            <div class="mobile-nav-subitem" onclick="window.miamApp.selectCollection('epis')">
-              <span class="mobile-nav-subitem-left">
-                <span class="mobile-nav-subitem-icon">🌶️</span>
-                <span>L'Épis Piquant (Piment Cabri 🌶️)</span>
-              </span>
+            </a>
+            <a href="#" class="mobile-nav-subitem" onclick="window.miamApp.closeMobileMenu(); event.preventDefault(); window.miamApp.viewProduct('epis-piquant');">
+              <span class="mobile-nav-subitem-left"><span class="mobile-nav-subitem-icon">🌶️</span><span>L'Épis Piquant</span></span>
               <span class="mobile-nav-subitem-arrow">›</span>
-            </div>
-            <div class="mobile-nav-subitem" onclick="window.miamApp.selectCollection('epis')">
-              <span class="mobile-nav-subitem-left">
-                <span class="mobile-nav-subitem-icon">🍃</span>
-                <span>L'Épis Doux &amp; Végétal 🌿</span>
-              </span>
+            </a>
+            <a href="#" class="mobile-nav-subitem" onclick="window.miamApp.closeMobileMenu(); event.preventDefault(); window.miamApp.viewProduct('epis-doux-vegetal');">
+              <span class="mobile-nav-subitem-left"><span class="mobile-nav-subitem-icon">🍃</span><span>L'Épis Doux & Végétal</span></span>
               <span class="mobile-nav-subitem-arrow">›</span>
-            </div>
-            <div class="mobile-nav-subitem" onclick="window.miamApp.selectCollection('epis')">
-              <span class="mobile-nav-subitem-left">
-                <span class="mobile-nav-subitem-icon">🔥</span>
-                <span>L'Épis Barbecue &amp; Grillades 🔥</span>
-              </span>
+            </a>
+            <a href="#" class="mobile-nav-subitem" onclick="window.miamApp.closeMobileMenu(); event.preventDefault(); window.miamApp.viewProduct('epis-barbecue');">
+              <span class="mobile-nav-subitem-left"><span class="mobile-nav-subitem-icon">🔥</span><span>L'Épis Barbecue</span></span>
               <span class="mobile-nav-subitem-arrow">›</span>
-            </div>
+            </a>
+            <a href="#" class="mobile-nav-subitem" onclick="window.miamApp.closeMobileMenu(); event.preventDefault(); window.miamApp.viewProduct('pikliz-traditionnel-merlie');">
+              <span class="mobile-nav-subitem-left"><span class="mobile-nav-subitem-icon">🥗</span><span>Pikliz Traditionnel</span></span>
+              <span class="mobile-nav-subitem-arrow">›</span>
+            </a>
+            <a href="#" class="mobile-nav-subitem" onclick="window.miamApp.closeMobileMenu(); event.preventDefault(); window.miamApp.selectCollection('pros');">
+              <span class="mobile-nav-subitem-left"><span class="mobile-nav-subitem-icon">📦</span><span>Formats Professionnels</span></span>
+              <span class="mobile-nav-subitem-arrow">›</span>
+            </a>
           </div>
         </div>
-
-        <!-- PACKS & BUNDLES -->
-        <a href="#packs-anchor" class="mobile-nav-item" onclick="event.preventDefault(); window.miamApp.selectCollection('packs')">
+        <a href="#" class="mobile-nav-item" onclick="event.preventDefault(); window.miamApp.navigate('blog')">
           <span class="mobile-nav-left">
-            <span class="mobile-nav-icon-box theme-gold">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h18v4H3zM5 12v9h14v-9M12 8v13"/><path d="M12 8H8a3 3 0 1 1 4-3zm0 0h4a3 3 0 1 0-4-3z"/></svg>
+            <span class="mobile-nav-icon-box theme-red">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6 6h10M6 10h10"/></svg>
             </span>
-            <span class="mobile-nav-text">Packs &amp; Bundles</span>
+            <span class="mobile-nav-text">Nos Recettes</span>
           </span>
           <span class="mobile-nav-chevron">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="9 18 15 12 9 6"></polyline></svg>
           </span>
         </a>
-
-        <!-- PIKLIZ TRADITIONNEL -->
-        <a href="#best-products-anchor" class="mobile-nav-item" onclick="event.preventDefault(); window.miamApp.selectCollection('condiments')">
-          <span class="mobile-nav-left">
-            <span class="mobile-nav-icon-box theme-green">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m15 9-6 6"/><path d="m9 9 6 6"/></svg>
-            </span>
-            <span class="mobile-nav-text">Pikliz Traditionnel</span>
-          </span>
-          <span class="mobile-nav-chevron">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="9 18 15 12 9 6"></polyline></svg>
-          </span>
-        </a>
-
-        <!-- ESPACE PROS -->
-        <a href="#" class="mobile-nav-item" onclick="event.preventDefault(); window.miamApp.selectCollection('pros')">
-          <span class="mobile-nav-left">
-            <span class="mobile-nav-icon-box theme-green">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-            </span>
-            <span class="mobile-nav-text">Espace Pros (1kg, 2kg, 5kg)</span>
-          </span>
-          <span class="mobile-nav-chevron">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="9 18 15 12 9 6"></polyline></svg>
-          </span>
-        </a>
-
-        <!-- NOTRE HISTOIRE -->
         <a href="#" class="mobile-nav-item" onclick="event.preventDefault(); window.miamApp.navigate('story')">
           <span class="mobile-nav-left">
             <span class="mobile-nav-icon-box theme-gold">
@@ -383,40 +314,12 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="9 18 15 12 9 6"></polyline></svg>
           </span>
         </a>
-
-        <!-- NOS RECETTES -->
-        <a href="#" class="mobile-nav-item" onclick="event.preventDefault(); window.miamApp.navigate('blog')">
-          <span class="mobile-nav-left">
-            <span class="mobile-nav-icon-box theme-red">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6 6h10M6 10h10"/></svg>
-            </span>
-            <span class="mobile-nav-text">Nos Recettes &amp; Astuces</span>
-          </span>
-          <span class="mobile-nav-chevron">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="9 18 15 12 9 6"></polyline></svg>
-          </span>
-        </a>
-
-        <!-- FAQ -->
-        <a href="#" class="mobile-nav-item" onclick="event.preventDefault(); window.miamApp.navigate('faq')">
-          <span class="mobile-nav-left">
-            <span class="mobile-nav-icon-box theme-blue">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-            </span>
-            <span class="mobile-nav-text">Foire Aux Questions</span>
-          </span>
-          <span class="mobile-nav-chevron">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="9 18 15 12 9 6"></polyline></svg>
-          </span>
-        </a>
-
-        <!-- CONTACT -->
         <a href="#" class="mobile-nav-item" onclick="event.preventDefault(); window.miamApp.navigate('contact')">
           <span class="mobile-nav-left">
             <span class="mobile-nav-icon-box theme-green">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
             </span>
-            <span class="mobile-nav-text">Nous Contacter</span>
+            <span class="mobile-nav-text">Contact</span>
           </span>
           <span class="mobile-nav-chevron">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="9 18 15 12 9 6"></polyline></svg>
@@ -462,16 +365,19 @@
         </div>
 
         <div class="mobile-nav-footer-bottom-row">
-          <a href="https://wa.me/50939424419?text=Bonjour%20Le%20Secret%20de%20Merlie,%20j%27ai%20besoin%20d%27assistance" target="_blank" rel="noopener noreferrer" class="mobile-nav-pill-assist" title="Contacter notre assistance">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-            </svg>
-            <span>Assistance</span>
-          </a>
-
           <button type="button" class="mobile-nav-pill-order" onclick="window.miamApp.navigate('shop')">
-            <span>Commander en ligne</span>
+            <span>Commander en ligne</span><span aria-hidden="true">↗</span>
           </button>
+          <div class="mobile-menu-utility-row">
+            <a href="https://wa.me/50939424419?text=Bonjour%20Le%20Secret%20de%20Merlie,%20j%27ai%20besoin%20d%27assistance" target="_blank" rel="noopener noreferrer" class="mobile-nav-pill-assist">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              <span>Assistance</span>
+            </a>
+            <button type="button" class="mobile-menu-cart" onclick="window.miamApp.closeMobileMenu(); window.miamApp.openCart();">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M5 7h14l1 14H4L5 7Z"/><path d="M9 8V5a3 3 0 0 1 6 0v3"/></svg>
+              <span>Mon panier</span><span id="mobile-drawer-cart-count">0</span>
+            </button>
+          </div>
         </div>
       </div>
 
@@ -623,7 +529,7 @@
         </button>
 
         <!-- Compte Client -->
-        <button type="button" class="nav-icon-btn" onclick="window.miamApp.openAccountModal()" aria-label="Mon compte" title="Mon compte client">
+        <button type="button" class="nav-icon-btn nav-account-btn" onclick="window.miamApp.openAccountModal()" aria-label="Mon compte" title="Mon compte client">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
             <circle cx="12" cy="7" r="4"></circle>
@@ -659,7 +565,7 @@
 
         <!-- Menu Mobile Burger -->
         <button type="button" class="nav-burger-btn" onclick="window.miamApp.openMobileMenu()" aria-label="Ouvrir le menu">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          <span class="nav-burger-lines" aria-hidden="true"><span></span><span></span><span></span></span>
         </button>
       </div>
     </div>
@@ -1220,13 +1126,16 @@
     <!-- SECTION 6 — NEWSLETTER CLUB -->
     <section class="section-padding home-club-section">
       <div class="container">
-        <div class="newsletter-card" style="border-radius: 0 !important;">
+        <div class="newsletter-card">
           <span class="badge badge-pink" style="margin-bottom: 1rem;">Club Le Secret de Merlie</span>
           <h2>Une petite dose de gourmandise ?</h2>
-          <p>Recevez nos nouveautés, promotions exclusives et recettes directement dans votre boîte mail. -10% offerts sur votre première commande !</p>
+          <p>Recevez nos nouveautés, promotions exclusives et recettes directement dans votre boîte mail.<strong class="club-welcome-offer">−10 % offerts sur votre première commande !</strong></p>
           
           <form class="newsletter-form" onsubmit="window.miamApp.handleNewsletter(event)">
-            <input type="email" class="newsletter-input" aria-label="Adresse e-mail" autocomplete="email" required placeholder="Entrez votre adresse email...">
+            <label class="club-field-label" for="club-firstname">Votre prénom <span>(facultatif)</span></label>
+            <input type="text" id="club-firstname" name="firstName" autocomplete="given-name" placeholder="Votre prénom">
+            <label class="club-field-label" for="club-email">Votre adresse e-mail</label>
+            <input type="email" id="club-email" name="email" class="newsletter-input" aria-label="Adresse e-mail" autocomplete="email" required placeholder="Entrez votre adresse email...">
             <button type="submit" class="btn btn-primary btn-lg">
               Je m'inscris
             </button>
